@@ -430,7 +430,7 @@ class TimesFmBase:
       freq: Sequence[int] | None = None,
       window_size: int | None = None,
       forecast_context_len: int | None = None,
-      xreg_mode: XRegMode = "xreg + timesfm",
+      xreg_mode: XRegMode = "timesfm + xreg",
       normalize_xreg_target_per_input: bool = True,
       ridge: float = 0.0,
       max_rows_per_col: int = 0,
@@ -453,8 +453,8 @@ class TimesFmBase:
       window_size: window size of trend + residual decomposition. If None then
         we do not do decomposition.
       forecast_context_len: optional max context length.
-      xreg_mode: one of "xreg + timesfm" or "timesfm + xreg". "xreg + timesfm"
-        fits a model on the residuals of the TimesFM forecast. "timesfm + xreg"
+      xreg_mode: one of "xreg + timesfm" or "timesfm + xreg". "timesfm + xreg"
+        fits a model on the residuals of the TimesFM forecast. "xreg + timesfm"
         fits a model on the targets then forecasts on the residuals via TimesFM.
       normalize_xreg_target_per_input: whether to normalize the xreg target per
         input in the given batch.
